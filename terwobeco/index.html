@@ -12,7 +12,7 @@
     </header>
     <main>
 
-<!--ELEMENTS-->
+
 <div class="wr_al" style="margin:20px 0">
 
 <textarea oninput="cCheck(this)"
@@ -20,12 +20,12 @@
             id="input_text" class="textarea_text notranslate" 
             rows="10"></textarea>
 <div class="cntrmrg">
-    <button disabled type="button" id="btn_char" class="btn_counter">Characters</button>
-    <button disabled type="button" id="btn_word" class="btn_counter">Words/Nums</button>
     <div class="input_holder">
         <input type="text" id="output_text" class="output_text" readonly="readonly" placeholder="Result">
         <input type="text" id="elapsed" class="output_text narrow" readonly="readonly" placeholder="Time">
     </div>
+    <button disabled type="button" id="btn_char" class="btn_counter">Characters</button>
+    <button disabled type="button" id="btn_word" class="btn_counter">Words/Nums</button>
     <button disabled type="button" id="btn_clear" class="btn_counter" title="Clear all">X</button>
 </div>
 <div id="out_arr" class="div_words">
@@ -56,9 +56,9 @@ June 13, 2015 updates
 <li><small>Updated the <code>JavaScript</code>. It is now <em>faster</em> than previous version.</small></li>
 <li><small>Added elapsed time monitor.</small></li>
 </ul>
-<!--SCRIPT-->
-<SCRIPT>
-//<![CDATA[
+
+<script>
+
 //Monkey Raptor: Checking Firefox June 27, 2015
 var firefox=navigator.userAgent.match(/firefox/gi);
 //Monkey Raptor: Added scroll locking module June 25, 2015
@@ -81,8 +81,7 @@ function worda(){"use strict";var buff,array=[],total;start=dat();if(inp.value!=
 function chara(){"use strict";var buff,array=[],total;start=dat();if(inp.value!==""){buff=inp.value.split("");total=buff.length;buff=occurrence(buff);Object.keys(buff).forEach(function(v){array.push(buff[v].length+divider+v);});array=array.sort(sortnumber);printR(array);out.value=total;li.innerHTML+="<hr>Total: <span style='color:royalblue'>"+total+"</span>";finish=dat();elapsed=finish-start;elps.value=elapsed+" ms";}}
 function the_thing(flag){"use strict";li.innerHTML="";return!flag?chara():worda();}
 b_c.onclick=function(){"use strict";flag=0;the_thing(flag);};b_w.onclick=function(){"use strict";flag=1;the_thing(flag);};
-//]]>
-</SCRIPT>
+</script>
 <!--https://portraptor.johanpaul.net/2014/12/characterswordsnumber-counter-by-monkey.html-->
 
 </main>
